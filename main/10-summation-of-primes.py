@@ -13,7 +13,7 @@ def find_next_prime(previous_prime: int) -> int:
             return possible_prime
 
 
-def find_prime_sum(maximum_value: int):
+def find_prime_sum(maximum_value: int) -> int:
     prime_sum: int = 2
     prime: int = find_next_prime(2)
     while prime < maximum_value:
