@@ -15,7 +15,7 @@ def find_verticals_product(grid: tuple, height: int, width: int, adjacent_length
     for y_start_coordinate in range(0, height - adjacent_length + 1):
         for x_coordinate in range(0, width):
             adjacent_product: int = grid[y_start_coordinate][x_coordinate]
-            for y_coordinate in range(y_start_coordinate+1, y_start_coordinate + adjacent_length):
+            for y_coordinate in range(y_start_coordinate + 1, y_start_coordinate + adjacent_length):
                 adjacent_product *= grid[y_coordinate][x_coordinate]
             if adjacent_product > greatest_product:
                 greatest_product: int = adjacent_product
@@ -27,7 +27,7 @@ def find_horizontals_product(grid: tuple, height: int, width: int, adjacent_leng
     for x_start_coordinate in range(0, width - adjacent_length + 1):
         for y_coordinate in range(0, height):
             adjacent_product: int = grid[y_coordinate][x_start_coordinate]
-            for x_coordinate in range(x_start_coordinate+1, x_start_coordinate + adjacent_length):
+            for x_coordinate in range(x_start_coordinate + 1, x_start_coordinate + adjacent_length):
                 adjacent_product *= grid[y_coordinate][x_coordinate]
             if adjacent_product > greatest_product:
                 greatest_product: int = adjacent_product

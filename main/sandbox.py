@@ -1,1 +1,0 @@
-print(int(possible_prime ** 2) + 1)
