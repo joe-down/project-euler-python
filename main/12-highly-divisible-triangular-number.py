@@ -14,22 +14,18 @@ class TriangleNumber:
 
     def get_divisors(self) -> list:
         divisors: list = []
-        possible_factor: int = 1
-        maximum_possible_factor: int = self.value // possible_factor + 1
-        while possible_factor < maximum_possible_factor:
+        for possible_factor in range(1, int(self.value ** 0.5) + 1):
             if self.value % possible_factor == 0:
                 divisors.append(possible_factor)
-                multiplier = self.value // possible_factor
+                multiplier: int = self.value // possible_factor
                 if multiplier != possible_factor:
                     divisors.append(multiplier)
-            possible_factor += 1
-            maximum_possible_factor: int = self.value // possible_factor + 1
         return divisors
 
 
 def main(minimum_divisors: int = 0):
     value_found: bool = False
-    triangle_number = TriangleNumber(1)
+    triangle_number: TriangleNumber = TriangleNumber(1)
     while not value_found:
         if triangle_number.get_divisor_count() > minimum_divisors:
             break

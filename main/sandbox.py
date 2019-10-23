@@ -1,1 +1,1 @@
-print(15//2)
+print(int(possible_prime ** 2) + 1)
