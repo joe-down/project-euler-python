@@ -37,7 +37,7 @@ def find_horizontals_product(grid: tuple, height: int, width: int, adjacent_leng
 def find_downward_diagonals_product(grid: tuple, height: int, width: int, adjacent_length: int) -> int:
     greatest_product: int = 0
     for x_start_coordinate in range(0, width - adjacent_length + 1):
-        for y_start_coordinate in range(0, width - adjacent_length + 1):
+        for y_start_coordinate in range(0, height - adjacent_length + 1):
             adjacent_product: int = grid[y_start_coordinate][x_start_coordinate]
             for start_offset in range(1, adjacent_length):
                 adjacent_product *= grid[y_start_coordinate + start_offset][x_start_coordinate + start_offset]
@@ -49,7 +49,7 @@ def find_downward_diagonals_product(grid: tuple, height: int, width: int, adjace
 def find_upward_diagonals_product(grid: tuple, height: int, width: int, adjacent_length: int) -> int:
     greatest_product: int = 0
     for x_start_coordinate in range(0, width - adjacent_length + 1):
-        for y_start_coordinate in range(adjacent_length - 1, width):
+        for y_start_coordinate in range(adjacent_length - 1, height):
             adjacent_product: int = grid[y_start_coordinate][x_start_coordinate]
             for start_offset in range(1, adjacent_length):
                 adjacent_product *= grid[y_start_coordinate - start_offset][x_start_coordinate + start_offset]
