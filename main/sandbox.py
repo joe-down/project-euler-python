@@ -1,1 +1,2 @@
-print((3, 3, 3) * 3)
+class RenderedObject:
+    pass
